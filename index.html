@@ -1,0 +1,257 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="/node_modules/palaze/dist/palaze/palaze.esm.js"></script>
+    
+    <title>Document</title>
+</head>
+<style>
+    body,
+    div,
+    span {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-size: 20px;
+    }
+
+    p {
+        font-family: Palanquin, Padauk, sans-serif;
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 24px;
+        margin-block-end: 0px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .main-section {
+        display: block;
+        margin-left: 30%;
+        margin-right: 20%;
+        transition: all 0.3s;
+        margin-top: 5%;
+        margin-bottom: 10%;
+    }
+
+    .center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .parrafo-custom {
+        margin-block-start: 5px;
+        margin-block-end: 5px;
+    }
+</style>
+
+<body>
+    <!-- Header -->
+    <plz-header variant="right-hover" color="#212529" color-text="white" color-hover="#495057" color-text-hover="white">
+        <a slot="left" href="index.html">Palaze html test</a>
+        <a slot="right-select" target="_self">Docs</a>
+        <a slot="right-select" href="https://github.com/pablodiazjorge/palaze/tree/develop" target="_blank">Github</a>
+    </plz-header>
+    <!-- Sidebar -->
+    <plz-sidebar id-main="main" space-top="45">
+        <img src="pattern-test.jpg" width="225px" height="150px" alt="">
+        <plz-menu border-menu="none">
+            <plz-menu-item link="index.html" variant="custom" color-hover="#495057"
+                color-text="white">Prueba</plz-menu-item>
+            <plz-divider></plz-divider>
+            <plz-dropdown-menu link="index.html" variant="custom" color-hover="#495057" color-text="white"
+                active="true">
+                Componentes
+                <plz-menu-item slot="dropdown" link="index.html" variant="custom" color-hover="#495057d4"
+                    color-text="white" submenu="true" active="true">Ejemplo</plz-menu-item>
+            </plz-dropdown-menu>
+        </plz-menu>
+    </plz-sidebar>
+
+
+    <main id="main" class="main-section">
+        <h1>Prueba de componentes</h1>
+        <!-- Button -->
+        <plz-section variant="wrapper">
+            <plz-button variant="default">Default</plz-button>
+            <plz-button color="green">Default</plz-button>
+            <plz-button color="green" shadow-color="green" corners="low-rounded">Default</plz-button>
+            <plz-button variant="progress" active="true" color="purple" color-progress="white"
+                corners="low-rounded">Default</plz-button>
+            <plz-button variant="icon" icon="Icon-settings.svg"></plz-button>
+        </plz-section>
+        <!-- Card -->
+        <plz-section variant="wrapper">
+            <plz-card image="pattern-test.jpg" hover="green" width="250" target="_self">
+                <h3>Componente Card</h3>
+                <p>Se han añadido atributos para hacer aún más personalizable el componente.</p>
+            </plz-card>
+            <plz-card image="pattern-test.jpg" hover="red" width="250" target="_self">
+                <h3>Componente Hero</h3>
+                <p>Se ha añadido una variante en la que se divide el contenido en dos columnas.</p>
+            </plz-card>
+            <plz-card image="pattern-test.jpg" hover="blue" width="250" target="_self">
+                <h3>Componente Hero</h3>
+                <p>Se ha añadido una variante en la que se divide el contenido en dos columnas.</p>
+            </plz-card>
+        </plz-section>
+        <plz-card class="center" variant="image" image="pattern-test.jpg" hover="green">
+            <p style="color: white; line-height: 1; margin-top: 75px;">Esta es una card con una imagen de
+                fondo y texto.</p>
+        </plz-card>
+        <plz-section variant="wrapper">
+            <plz-card variant="header">
+                <div slot="header-content">
+                    <p class="parrafo-custom"><b>Header</b></p>
+                </div>
+                <p slot="content">Es una card simple en la que puedes poner texto a modo informativo. Las
+                    funciones que pueda llegar a terner solo lo dicta tu imaginación.</p>
+            </plz-card>
+            <plz-card variant="simple">
+                <h3>Card simple personalizada</h3>
+                <p style="text-align: justify;">En este caso se ha añadido un título "h3" y a continuación un
+                    texto "p". También se le ha pasado por estilo que el texto se encuentre justificado.</p>
+            </plz-card>
+            <plz-card variant="footer">
+                <p slot="content">Este componente card tiene un footer en el que puedes colocar la
+                    información que consideres. En este ejemplo ponemos un texto y un botón.</p>
+                <div style="display: flex; align-items: center; justify-content: space-between;" slot="footer-content">
+                    <p class="parrafo-custom"><b>Configuración</b></p>
+                    <plz-button variant="icon" icon="Icon-settings.svg" size="small"></plz-button>
+                </div>
+            </plz-card>
+        </plz-section>
+        <!-- Colors -->
+        <plz-section variant="wrapper">
+            <plz-colors variant="green"></plz-colors>
+            <plz-colors variant="blue"></plz-colors>
+            <plz-colors variant="red"></plz-colors>
+            <plz-colors variant="yellow"></plz-colors>
+            <plz-colors variant="purple"></plz-colors>
+            <plz-colors variant="orange"></plz-colors>
+            <plz-colors variant="black"></plz-colors>
+        </plz-section>
+        <!-- Divider -->
+        <plz-divider space-top="10" space-bottom="15" height="3" type="solid"></plz-divider>
+        <plz-divider space-top="10" space-bottom="15" height="3" type="dashed"></plz-divider>
+        <plz-divider space-top="10" space-bottom="30" height="3" type="dotted"></plz-divider>
+        <plz-divider variant="custom" height="250" custom-divider="Divider-orange.svg"
+            custom-position="bottom left"></plz-divider>
+        <plz-divider space-top="20" height="3" type="solid" color="#FACCAC"></plz-divider>
+        <plz-divider height="3" type="solid" color="rgb(212,104,62,100%)"></plz-divider>
+        <plz-divider space-bottom="10" height="3" type="solid" color="rgba(205, 84, 82, 1)"></plz-divider>
+
+        <plz-divider space-top="15" height="1.5" type="solid" color="#ee4a00"></plz-divider>
+        <plz-divider height="1.5" type="solid" color="#e28000"></plz-divider>
+        <plz-divider height="1.5" type="solid" color="#f9a72f"></plz-divider>
+        <plz-divider height="1.5" type="solid" color="#fbbd5e"></plz-divider>
+        <!-- Footer -->
+        <plz-footer variant="block" height="600" image="pattern-test.jpg">
+            <h3>Contacto</h3>
+            <p>
+                Puedes consultar o contactar con nosotros via los siguientes enlaces.
+            </p>
+            <plz-button variant="icon" icon="github"></plz-button>
+            <plz-button variant="icon" icon="linkedin"></plz-button>
+            <plz-button variant="icon" icon="mail"></plz-button>
+        </plz-footer>
+        <br>
+        <plz-footer variant="two-column" height="650" image="pattern-test.jpg">
+            <plz-button slot="first-column" variant="icon" icon="palaze"></plz-button>
+            <p slot="first-column">Palace es un proyecto de componentes web con código libre. Podrás acceder
+                al código a través de nuestro Github.</p>
+            <h3 slot="second-column" style="margin-bottom: 20px;">Segunda Columna</h3>
+            <p slot="second-column">Otro contenido que sea relevante</p>
+        </plz-footer>
+        <!-- Hero -->
+        <plz-showcase>
+            <plz-showcase-render>
+                <plz-hero variant="simple" height="400">
+                    <h1 style="line-height: 1;">Hero</h1>
+                    <p style=" text-align: center;">Aquí suele ir una pequeña introducción al contenido de tu
+                        landing page,algo que capte la atención de los usuarios al visitar tu web.</p>
+                </plz-hero>
+            </plz-showcase-render>
+            <plz-showcase-code text-code='<plz-hero variant="simple" height="400">
+                <h1 style="line-height: 1;">Hero</h1>
+                <p style=" text-align: center;">Aquí suele ir una pequeña introducción al contenido de tu
+                    landing page,algo que capte la atención de los usuarios al visitar tu web.</p>
+            </plz-hero>'>
+            </plz-showcase-code>
+        </plz-showcase>
+        <plz-showcase>
+            <plz-showcase-render>
+                <plz-hero variant="two-column" height="650" image="hero-test.png">
+                    <plz-button slot="first-column" variant="icon" icon="palaze"></plz-button>
+                    <p slot="first-column">Palace es un proyecto de componentes web con código libre. Podrás acceder
+                        al código a través de nuestro Github.</p>
+                    <h3 slot="second-column" style="margin-bottom: 20px;">Segunda Columna</h3>
+                    <p slot="second-column">Otro contenido que sea relevante</p>
+                </plz-hero>
+            </plz-showcase-render>
+            <plz-showcase-code text-code='<plz-hero variant="two-column" height="650" image="hero-test.png">
+                <plz-button slot="first-column" variant="icon" icon="palaze"></plz-button>
+                <p slot="first-column">Palace es un proyecto de componentes web con código libre. Podrás acceder
+                    al código a través de nuestro Github.</p>
+                <h3 slot="second-column">Segunda Columna</h3>
+                <p slot="second-column">Otro contenido que sea relevante</p>
+            </plz-hero>'>
+            </plz-showcase-code>
+        </plz-showcase>
+        <plz-showcase>
+            <plz-showcase-render display="block">
+                <plz-hero variant="image" height="600" image="hero-test.png">
+                </plz-hero>
+            </plz-showcase-render>
+            <plz-showcase-code text-code='<plz-hero variant="image" height="600" image="hero-test.png">
+            </plz-hero>'>
+            </plz-showcase-code>
+        </plz-showcase>
+        <plz-showcase>
+            <plz-showcase-render>
+                <plz-hero image="hero-test.png">
+                    <h1 style="line-height: 1;">Hero</h1>
+                    <p style=" text-align: center;">Aquí suele ir una pequeña introducción al contenido de tu
+                        landing page, algo que capte la atención de los usuarios al visitar tu web.</p>
+                </plz-hero>
+            </plz-showcase-render>
+            <plz-showcase-code text-code='<plz-hero image="hero-test.png">
+                <h1>Hero</h1>
+                <p>Aquí suele ir una pequeña introducción al contenido de tu
+                    landing page, algo que capte la atención de los usuarios al visitar tu web.</p>
+            </plz-hero>'>
+            </plz-showcase-code>
+        </plz-showcase>
+        <!-- Spinner -->
+        <plz-section variant="wrapper">
+            <plz-spinner variant="simple"></plz-spinner>
+            <plz-spinner variant="normal"></plz-spinner>
+            <plz-spinner variant="wave"></plz-spinner>
+            <plz-spinner variant="atom"></plz-spinner>
+            <plz-spinner variant="bola"></plz-spinner>
+        </plz-section>
+        <!-- Tooltip -->
+        <plz-section variant="wrapper">
+            <p>Desplaza el cursor por el<plz-tooltip variant="text" position="bottom"
+                    text="tooltip">texto</plz-tooltip>hasta encontrar el tooltip.</p>
+            <p>Desplaza el cursor por el<plz-tooltip variant="text" position="right"
+                    text="tooltip">texto</plz-tooltip>hasta encontrar el tooltip.</p>
+            <p>Desplaza el cursor por el<plz-tooltip variant="text" position="left"
+                    text="tooltip">texto</plz-tooltip>hasta encontrar el tooltip.</p>
+            <p>Desplaza el cursor por el<plz-tooltip variant="text" position="top"
+                    text="tooltip">texto</plz-tooltip>hasta encontrar el tooltip.</p>
+        </plz-section>
+    </main>
+</body>
+
+</html>
